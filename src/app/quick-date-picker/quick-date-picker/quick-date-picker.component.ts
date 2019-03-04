@@ -3,7 +3,7 @@ import {
   ChangeDetectionStrategy, OnChanges, SimpleChange, SimpleChanges
 } from '@angular/core';
 import { QuickDatePicker } from './quick-date-picker.config';
-import * as moment from 'moment-timezone';
+import moment from 'moment';
 import { DateTimeRange } from '../models/quick-date-picker.model';
 import { Style } from '../models/quick-date-picker.model';
 @Component({
