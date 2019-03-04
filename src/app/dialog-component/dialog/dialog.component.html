@@ -1,0 +1,22 @@
+<div
+    *ngIf="visible"
+    class="dialog"
+    [(ngClass)]="dimensionsClass"
+>
+
+    <ng-content></ng-content>
+    <span class="close-btn-wrapper">
+        <i
+            *ngIf="closable"
+            (click)="close()"
+            aria-label="Close"
+            class="close-btn"
+            tabindex="0"
+        ></i>
+    </span>
+</div>
+<div
+    *ngIf="visible"
+    class="overlay"
+    (click)="closeOnDocumentClick()"
+></div>

@@ -1,0 +1,44 @@
+<ng-template #dateTimePicker let-type="context">
+  <mat-calendar #picker *ngIf="type !== 'time'" [startAt]="selectedDate" [minDate]="minDate" [maxDate]="maxDate"
+    [selected]="selectedDate" (selectedChange)="selectedDateChanged($event)"></mat-calendar>
+  <div class="timepicker-wrapper" *ngIf="type === 'dateTime' || type === 'dateTimeRange' || type === 'time'">
+    <app-time-picker [controlMeridiem]="controlMeridiem" [isLTMinMinute]="isLTMinMinute" [isMeridiemEqual]="isMeridiemEqual"
+      [disableTogglebBtn]="disableTogglebBtn" [value]="timeValue" [config]="timeConfig" (timeChanged)="timeChanged($event)"></app-time-picker>
+  </div>
+</ng-template>
+
+<ng-template #actionButton>
+  <div class="button-cancel-apply">
+    <button mat-raised-button class='action-btn' (click)="onCancel()">Cancel</button>
+    <button mat-raised-button class='action-btn' [disabled]="isApplyDisabled" (click)="onApply()">Apply</button>
+  </div>
+</ng-template>
+
+<div class="date-container-parent" [ngStyle]="datePickerStyle">
+  <div *ngIf="!(type === 'dateRange' || type === 'dateTimeRange')" class="date-tab">
+    <ng-container [ngTemplateOutlet]="dateTimePicker" [ngTemplateOutletContext]="{ context: type }"></ng-container>
+  </div>
+
+  <div *ngIf="type === 'dateRange' || type === 'dateTimeRange'" class="date-tab">
+    <mat-tab-group animationDuration="0ms" (selectedTabChange)="onTabChanged($event)">
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <span class="tab-range">From</span>
+          <span class="tab-date">{{dateLables['0']}}{{timeLables['0']}}</span>
+        </ng-template>
+        <ng-container *ngIf="showFromDateContent" [ngTemplateOutlet]="dateTimePicker" [ngTemplateOutletContext]="{ context: type }">
+        </ng-container>
+      </mat-tab>
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <span class="tab-range">To</span>
+          <span class="tab-date">{{dateLables['1']}}{{timeLables['1']}}</span>
+        </ng-template>
+        <ng-container *ngIf="showToDateContent" [ngTemplateOutlet]="dateTimePicker" [ngTemplateOutletContext]="{ context: type }">
+        </ng-container>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+
+  <ng-container [ngTemplateOutlet]="actionButton"></ng-container>
+</div>

@@ -1,0 +1,10 @@
+<section class="app-time-picker">
+  <app-number-input [controlMeridiem]="controlMeridiem" [isLTMinMinute]="isLTMinMinute" [isMeridiemEqual]="isMeridiemEqual"
+    [value]="time.hour" [label]="config.hourLable" [min]=timeConfig.minHour [max]=timeConfig.maxHour (valueChanged)="setHours($event)"></app-number-input>
+  <app-number-input [controlMeridiem]="controlMeridiem" [isLTMinMinute]="isLTMinMinute" [isMeridiemEqual]="isMeridiemEqual"
+    [value]="time.minute" [label]="config.minuteLable" [min]=timeConfig.minMinute [max]=timeConfig.maxMinute
+    (valueChanged)="setMinutes($event)"></app-number-input>
+  <app-toggle-button [controlMeridiem]="controlMeridiem" [disableTogglebBtn]="disableTogglebBtn ? true : false"
+    [btnStyle]="btnStyle" [lableOne]="lableOne" [lableTwo]="lableTwo" *ngIf="timeConfig.minHour !== 0" [value]="time.meridiem"
+    (toggled)="onBtnToggle($event)"></app-toggle-button>
+</section>

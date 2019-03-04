@@ -1,0 +1,16 @@
+
+.app-time-picker {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    max-width: 18em;
+    margin: auto;
+    app-number-input {
+        flex-grow: 1;
+        padding-right: 1em;
+    }
+    app-toggle-button {
+        position: relative;
+        bottom: .07em;
+    }
+}

@@ -1,0 +1,17 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+  <img width="300" alt="HCL Logo" src="../assets/hcl-business.jpg">
+</div>
+
+<div class="fit-to-center">
+  <h3>Select an option to get range : </h3>
+  <app-quick-date-picker [datePresets]="quickDateFilter" [dateFormat]="dateFormat" [fromDateTime]="fromDate"
+    [toDateTime]="toDate" [maxDate]="maxDate" [type]="'dateRange'" [value]="'this_week'" [minDate]="minDate"
+    (DateChanged)="getDateForFilter($event)">
+  </app-quick-date-picker>
+
+  <h3>Range : {{firstdate | date}} - {{lastdate | date}}</h3>
+</div>

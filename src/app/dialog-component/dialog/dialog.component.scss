@@ -1,0 +1,78 @@
+/*
+ * COMPONENT STYLE SHEET
+ * ======================
+ *
+ * Styles related to DIALOG WIDGET ONLY. 
+ *
+ * DON'T ADD Styles related to components which are showing through dialog component.
+ * 
+ * ADD those related styles in `dialog.component.user.scss` files 
+ */
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 99999999;
+}
+
+
+@mixin rotate($degree) {
+  -webkit-transform: rotate(#{$degree}deg);
+  -ms-transform: (#{$degree}deg);
+  transform: rotate(#{$degree}deg);
+}
+
+.dialog {
+  >h4 {
+    text-align: left;
+  }
+
+  z-index: 100000000;
+  position: fixed;
+  right: 0;
+  left: 0;
+  margin-right: auto;
+  margin-left: auto; // min-height: 200px;
+  width: 90%;
+  max-width: 380px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 7px 8px -4px rgba(0, 0, 0, 0.2),
+  0 13px 19px 2px rgba(0, 0, 0, 0.14),
+  0 5px 24px 4px rgba(0, 0, 0, 0.12);
+  top:50%;
+  transform: translateY(-50%);
+  max-height: 90vh;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.close-btn-wrapper {
+  position: absolute;
+  top: 20px;
+  right: 2em;
+
+  .close-btn {
+    cursor: pointer;
+    //margin: 1.5em;
+    box-sizing: content-box;
+    border-radius: 50%;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      height: 25px;
+      width: 25px;
+      background: url('/assets/images/remove.svg') no-repeat !important;
+      background-size: 15px !important;
+      box-sizing: content-box;
+    }
+  }
+}
+
+/* ========= Please read comments in first line before making changes in this file ========= */

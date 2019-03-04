@@ -1,0 +1,23 @@
+<div class="quick-date-picker">
+  <mat-form-field *ngIf="showOptions">
+    <mat-select [(ngModel)]="value" placeholder="">
+      <mat-select-trigger>
+        <span *ngIf="value=='custom_range'" class="example-additional-selection">
+          {{this.firstday.split(' ')[0]}} - {{this.lastday.split(' ')[0]}}
+        </span>
+        <span *ngIf="value!='custom_range'">
+          {{displayValue}}
+        </span>
+      </mat-select-trigger>
+      <mat-option *ngFor="let date of datePresets" [value]="date.id" (click)="onChange(date.id)">
+        {{date?.lable}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+<app-widget-dialog [visible]="ShowDateRange" [closeDialogOnDocumentClick]="dismissable" *ngIf='ShowDateRange'
+  [closable]="closable" (visibleChange)="onCancel()">
+  <app-date-picker [minDate]="minDate" [duration]="duration" [maxDate]="maxDate" [type]="type" [dateFormat]="dateFormat"
+    [fromDateTime]="fromDateTime" [toDateTime]="toDateTime" (cancel)="onCancel()" [datePickerStyle]="datePickerStyle"
+    (applySelectedDate)="onApply($event)"></app-date-picker>
+</app-widget-dialog>

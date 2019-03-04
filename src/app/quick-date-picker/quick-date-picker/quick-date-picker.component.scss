@@ -1,0 +1,73 @@
+@import "../quick-date-picker-style.scss";
+
+::ng-deep .ng-trigger.ng-trigger-transformPanel.ng-tns-c3-1.mat-select-panel.mat-primary.ng-star-inserted.mat-select-panel-done-animating {
+  font-family: roboto !important;
+  font-size: 16px !important;
+  min-width: 152px !important;
+  color: $color-grey !important;
+}
+
+
+
+::ng-deep .quick-date-picker {
+
+  .mat-form-field-ripple {
+    background-color: map-get($DatePicker, Yellow)
+  }
+
+  .mat-form-field {
+    width: auto !important;
+  }
+
+  .mat-select-value {
+    max-width: 13em !important;
+    width: auto !important;
+  }
+
+  .mat-select {
+    width: auto !important;
+  }
+
+  .mat-form-field-infix {
+    width: auto !important;
+  }
+}
+
+::ng-deep .mat-select-panel {
+  .mat-option:hover {
+    background-color: $selcted-bgColor !important;
+  }
+
+  &:not([class*=mat-elevation-z]) {
+    box-shadow: 0px 5px 25px $select-box-shadow !important;
+  }
+}
+
+::ng-deep .mat-option {
+  color: $color-grey !important;
+
+  &.mat-active {
+    background: none !important;
+  }
+}
+
+::ng-deep .mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+  color: $color-black !important;
+}
+
+:host ::ng-deep .date-container-parent {
+  width: auto !important;
+  height: 0 !important;
+}
+
+.title {
+  width: 100%;
+  height: 3.25em;
+  color: $color-black;
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  font-size: 17px;
+  padding-left: 0.8em;
+  border-bottom: 1px solid $border-color;
+}

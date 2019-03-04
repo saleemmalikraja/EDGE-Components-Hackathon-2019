@@ -1,0 +1,267 @@
+@import "../date-picker.scss";
+
+@font-face {
+  font-family: 'RobotoRegular';
+  src: url('/assets/fonts/roboto/Roboto-Regular.ttf');
+}
+
+.date-tab {
+  height: calc(100% - 3.5em);
+}
+
+.date-container-parent {
+  width: 18em;
+  height: 32em;
+  min-height: 32em;
+  margin: auto;
+  //box-shadow: 0 0 10px #dedede;
+  border-radius: 5px;
+  background-color: $date-picker-bgColor;
+}
+
+.action-btn {
+  flex-grow: 1;
+  min-width: 50%;
+  border-left: 1px solid $label-border-color;
+}
+
+.timepicker-wrapper {
+  border-top: 1px solid $label-border-color;
+  padding: .75em .5em 1.5em .5em;
+}
+
+button:focus {
+  outline: none !important;
+}
+
+.tab-range {
+  line-height: normal;
+  font-size: 11px;
+  color: $grey-color;
+}
+
+.tab-date {
+  font-size: 12px;
+  color: $datetab-color;
+  font-weight: normal;
+  padding-top: 0.5em;
+}
+
+.button-cancel-apply {
+  border-top: 1px solid $label-border-color;
+  color: $btn-primary;
+  display: flex;
+  height: 3.5em;
+}
+
+::ng-deep .date-container-parent {
+  .button-cancel-apply {
+    .mat-tab-group.mat-primary .mat-tab-label:not(.mat-tab-disabled):focus {
+      background-color: transparent !important;
+    }
+
+    .mat-button:hover .mat-button-focus-overlay,
+    .mat-stroked-button:hover .mat-button-focus-overlay {
+      opacity: 0 !important;
+    }
+
+    .mat-raised-button {
+      .mat-button-wrapper {
+        font-size: 14px !important;
+      }
+
+      &:not([class*=mat-elevation-z]) {
+        box-shadow: none !important;
+        padding: 0% !important;
+      }
+
+      &[disabled][disabled] {
+        background-color: transparent;
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  .date-tab mat-tab-group {
+    .mat-tab-body-wrapper {
+      height: calc(100% - 3em);
+
+      .mat-tab-body {
+        min-height: 100%;
+
+        .mat-tab-body-content {
+          overflow: hidden !important;
+        }
+      }
+    }
+
+    .mat-tab-header.mat-tab-header-pagination-controls-enabled .mat-tab-header-pagination {
+      display: none !important;
+    }
+
+    .mat-tab-header {
+      .mat-tab-label-container .mat-tab-list {
+        transform: translate3d(0px, 0px, 0px) !important;
+
+        .mat-tab-labels {
+          height: 3.5em;
+
+          .mat-tab-label {
+            padding: 0.75em 0.75em !important;
+            justify-content: left !important;
+            align-items: unset !important;
+            flex-grow: 1 !important;
+            min-width: 50% !important;
+            height: auto;
+
+            .mat-tab-label-content {
+              font-size: 12px !important;
+              color: $grey-color !important;
+
+              span {
+                display: flex !important;
+                flex: 1 0 100% !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .mat-calendar {
+    display: block;
+    height: calc(100% - 5.75em);
+
+    .mat-calendar-header {
+      padding: 0px 0px 0 0px !important;
+
+      .mat-calendar-controls {
+        margin: 0 !important;
+
+        .mat-calendar-period-button.mat-button {
+          padding: 0 8px;
+
+          .mat-button-wrapper .mat-calendar-arrow {
+            border-top-color: $border-color;
+          }
+        }
+      }
+    }
+
+    .mat-calendar-content {
+      min-height: 17em !important;
+      padding: 0;
+
+      .mat-calendar-table {
+        .mat-calendar-table-header th {
+          padding: 0.02em !important;
+          font-size: 10px;
+          color: $datetab-color !important;
+        }
+
+        .mat-calendar-table-header-divider::after {
+          display: none !important;
+        }
+
+        .mat-calendar-table-header {
+          background-color: $calendar-header-color !important;
+        }
+
+        .mat-calendar-body {
+          .mat-calendar-body-today.mat-calendar-body-selected {
+            -webkit-box-shadow: none !important;
+            box-shadow: none !important;
+          }
+
+          .mat-calendar-body-today {
+            border-color: $today-date-color !important;
+          }
+
+          .mat-calendar-body-cell-content {
+            border-radius: 3px !important;
+            font-size: 12px !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+::ng-deep .date-container-parent .mat-tab-label:last-child {
+  border-left: 1px solid $label-border-color !important;
+}
+
+@media all and (max-width:767px) {
+  .tab-date {
+    font-size: 12px !important;
+  }
+
+  ::ng-deep .date-container-parent .date-tab mat-tab-group .mat-tab-header .mat-tab-label-container .mat-tab-list .mat-tab-labels .mat-tab-label {
+    margin-left: 0 !important;
+  }
+
+  ::ng-deep .date-container-parent .mat-calendar {
+    .mat-calendar-header {
+      .mat-calendar-controls {
+        .mat-calendar-period-button.mat-button {
+          font-size: 13px !important;
+        }
+      }
+    }
+  }
+}
+
+// @media all and (min-width:768px) and (max-width:1199px) {
+//   .tab-range {
+//     font-size: 17px;
+//   }
+
+//   .tab-date {
+//     font-size: 20px;
+//   }
+
+//   ::ng-deep .date-container-parent .mat-calendar {
+//     .mat-calendar-header {
+//       .mat-calendar-controls {
+//         margin: 4% calc(33% / 7 - 16px);
+
+//         .mat-calendar-period-button.mat-button {
+//           padding: 0 0px !important;
+//           font-size: 19px !important;
+
+//           .mat-button-wrapper .mat-calendar-arrow {
+//             width: 11px;
+//             height: 14px;
+//             border-top-width: 7px;
+//           }
+//         }
+//       }
+//     }
+
+//     .mat-calendar-content {
+//       .mat-calendar-table {
+
+//         .mat-calendar-table-header th {
+//           font-size: 16px;
+//         }
+
+//         .mat-calendar-body-cell-content {
+//           font-size: 18px !important;
+//         }
+//       }
+//     }
+//   }
+
+//   ::ng-deep .date-container-parent .button-cancel-apply .mat-raised-button .mat-button-wrapper {
+//     font-size: 20px !important;
+//   }
+
+//   ::ng-deep .date-container-parent .date-tab mat-tab-group .mat-tab-header .mat-tab-label-container .mat-tab-list .mat-tab-labels {
+//     height: 5em;
+
+//     .mat-tab-label {
+//       height: 5.75em;
+//     }
+//   }
+// }

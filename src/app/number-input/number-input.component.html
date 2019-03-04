@@ -1,0 +1,10 @@
+<section>
+  <div *ngIf="label" class="number-lable">{{label}}</div>
+
+  <form class="app-number-input" [formGroup]="numberForm">
+    <button [ngClass]="errorClass?'disable': ''" (click)="decrementNumber()"></button>
+    <input [ngClass]="errorClass?'error': ''" min="{{min}}" (keypress)="allowOnlyNumber($event)" max="{{max}}"
+      formControlName="inputValue" (focusout)="onNumberChanged(numberForm.get('inputValue').value)" type="number">
+    <button class="plus" [ngClass]="errorClass?'disable': ''" (click)="incrementNumber()"></button>
+  </form>
+</section>

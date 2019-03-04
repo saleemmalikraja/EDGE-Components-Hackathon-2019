@@ -1,0 +1,113 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+  .marb10{
+    margin-bottom: 10px;
+  }
+  /** color palettes**/
+  // body{
+  //   background: red;
+  // }
+  $color-white: #ffffff;
+  $color-black: #000000;
+  $color-yellow: #fbcd11;
+  $color-lightgrey: #565656;
+  $color-drakgrey: #969696;
+  $color-offwhite: #f2f2f2;
+  $color-link: #2a6bb8;
+  $color-red:#ff4d4d;
+  /*** font-weight **/
+  
+  $font-weight-300: 300;
+  $font-weight-500: 500;
+  $font-weight-600: 600;
+  $font-weight-700: 700;
+  /** borders **/
+  
+  $border-bottom-yellow: 1px solid $color-yellow;
+  $border-bottom-black: 1px solid $color-black;
+  $border-bottom-white: 1px solid $color-white;
+  $border-bottom-lightgrey: 1px solid $color-lightgrey;
+  $border-bottom-darkgrey: 1px solid $color-drakgrey;
+  /** fonts **/
+  
+  $font-header: 'Univers';
+  $font-body:'RobotoRegular';
+  /** font sizes **/
+  
+  $font-size-small: 12px;
+  $font-size-regular: 16px;
+  $font-size-large: 18px;
+  @mixin size($width,
+  $height) {
+    width: $width;
+    height: $height;
+  }
+  
+  @mixin textStyle($fontStretch,
+  $lineHeight,
+  $letterSpacing,
+  $textAlign) {
+    font-stretch: $fontStretch;
+    line-height: $lineHeight;
+    letter-spacing: $letterSpacing;
+    text-align: $textAlign;
+  }
+  
+  @mixin borderNone($borderLeft,
+  $borderRight,
+  $borderTop) {
+    border-left: $borderLeft !important;
+    border-right: $borderRight !important;
+    border-top: $borderTop !important;
+  }
+  
+  /** Add button*/
+  
+  .button-yellow {
+    @include size(100px,
+    30px);
+    border-radius: 3px;
+    background-color: $color-yellow;
+    color: $color-black;
+    border: 1px solid $color-yellow;
+    font-family: $font-body;
+    font-size: 0.75rem;
+    font-weight: $font-weight-700;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+  }
+  
+  /** Save button*/
+  
+  .save-button {
+    @include size(100px,
+    30px);
+    border-radius: 3px;
+    background-color: $color-yellow;
+    color: $color-black;
+    border: 1px solid $color-yellow;
+  }
+  
+  /** Cancel button */
+  
+  .cancel-button {
+    @include size(100px,
+    30px);
+    border-radius: 3px;
+    background-color: $color-white;
+    border: solid 1px $color-black;
+    color: $color-black;
+  }
+  
+  //landscape view mobile
+  @media only screen and (min-device-width: 667px) and (max-device-width: 1024px) and (orientation: landscape) {
+    body {
+      margin-left: 0px !important;
+      margin-right: 0px !important;
+    }
+  }
+  

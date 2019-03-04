@@ -1,0 +1,124 @@
+/*
+ * USER STYLE SHEET
+ * =================
+ *
+ * Add all styles which related to components which will be showed using dialog component
+ * 
+ */
+
+
+/*
+ * eRoute Device ManageMent : To show Map in Dialog
+ */
+
+.mapDimensions {
+   // width: 640px !important;
+    height: 90vh;
+    max-width: 640px !important;
+    mix-blend-mode: undefined;
+    border-radius: 5px;
+    background-color: #ffffff;
+}
+
+/*
+ * eRoutes Device Management : Add Device popup 
+ * eRoutes Header User Preference : user preferences popup
+ */
+/*
+div.dialog.validate-service-provider-popup ,
+div.dialog.user-preferences-popup {
+  top: 50px;
+} */
+
+
+/*
+ * eRoute In-Tranist : To show Map and Ticket in Dialog
+ */
+
+div.dialog.map-responsive {
+    min-height: calc(100% - 28%);
+    @media (min-width: 1024px) {
+        min-width: calc(100% - 36%);
+        min-height: calc(100% - 29%);
+        top: calc(100% - 50%);
+    }
+    min-width: calc(100vw - 10vw);
+    top: calc(100vh - 50vh);
+    display: flex;
+    z-index: 100000000;
+    position: fixed;
+    right: 0;
+    left: 0;
+}
+
+/*
+ * eRoutes Ticket widgets  : To show Ticket list in Dialog
+ */
+
+div.dialog.ticket-responsive {
+    min-width: calc(100vw - 10vw); // top: calc(100vh - (100vh - 30px));
+    transform: translateY(-50%);
+    top: calc(100vh - 50vh);
+    display: flex;
+    z-index: 100000000;
+    position: fixed;
+    right: 0;
+    left: 0;
+    max-height: calc(100vh - 75px);
+    @media all and (min-width: 1024px) {
+        min-width: calc(100% - 36%);
+        min-height: calc(100% - 100%);
+        max-height: calc(100vh - 10vh);
+        top: calc(100% - 50%);
+    }
+    @media all and (max-width: 767px) {
+        height: 100%;
+    }
+}
+
+/*
+ * eRoutes Ticket widgets : Maximized view 
+ */
+
+.tickets-maximized-view {
+    overflow-y: auto;
+    z-index: 999999999 !important;
+}
+
+
+
+/*
+ * TODO : Respective Team, 
+ * Please update comments like above for below styles which mapped with respective components of ( eRoutes / woa / pit )
+ */
+
+div.dialog.confirmation-responsive {
+   top: calc(50% - 8em);
+    transform: none;
+}
+
+/*
+ * Pit - Assign Tag Dialog MaxView 
+ */
+div.dialog.assign-tag-responsive {
+    top: 15%;
+     transform: none;
+     max-width: 558px;
+     @media all and (max-width: 767px) {
+        bottom:10%;
+    }
+    @media all and (max-height: 700px) {
+        bottom:10%;
+    }
+ }
+
+ /*
+ * EGS edit/download dialog max-width incease
+ */
+ div.dialog.egs-edit-download-popup, 
+ div.dialog.egs-download-agreement-popup {
+     max-width: 430px;
+     max-height: 600px;
+     overflow: auto;
+ }
+

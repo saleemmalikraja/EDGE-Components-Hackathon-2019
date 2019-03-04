@@ -1,0 +1,76 @@
+$graycolor: #E6E6E6;
+$blackcolor: #000;
+$redcolor: red;
+$lite-graycolor: #333333;
+
+section {
+  .number-lable {
+    padding-bottom: 0.2em;
+    font-weight: 500;
+    font-size: 13px;
+  }
+
+  .app-number-input {
+    display: inline-flex;
+
+    input[type=number] {
+      border: 1px solid $graycolor;
+      -webkit-appearance: textfield;
+      -moz-appearance: textfield;
+      appearance: textfield;
+      width: 2.5em;
+      color: $lite-graycolor;
+      text-align: center;
+      font-size: 13px;
+
+      &.error {
+        border: 1px solid $redcolor !important;
+      }
+
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+      }
+
+      &::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+      }
+    }
+
+    /* .number-input */
+    button {
+      outline: none;
+      cursor: pointer;
+      background: $graycolor;
+      width: 30px;
+      height: 35px;
+
+      &.disable {
+        opacity: 0.5;
+        pointer-events: none;
+      }
+
+      &:first-child {
+        border-radius: 3px 0 0 3px;
+      }
+
+      &:last-child {
+        border-radius: 0 3px 3px 0;
+      }
+
+      &:before,
+      &:after {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        width: .75em;
+        height: 1px;
+        background-color: $blackcolor;
+        transform: translate(-50%, -50%);
+      }
+
+      &.plus:after {
+        transform: translate(-50%, -50%) rotate(90deg);
+      }
+    }
+  }
+}
