@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
-import * as moment from 'moment-timezone';
+import moment from 'moment';
 import { types } from '../date-picker.config';
 import { Style } from '../models/date-picker.model';
 @Component({
